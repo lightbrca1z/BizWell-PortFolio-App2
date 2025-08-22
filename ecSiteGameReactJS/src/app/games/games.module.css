@@ -1,0 +1,32 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.main h1 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.comingSoon {
+  padding: 4rem 2rem;
+}
+
+.icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.comingSoon p {
+  color: #666;
+  font-size: 1.1rem;
+}

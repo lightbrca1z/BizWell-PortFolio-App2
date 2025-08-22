@@ -1,0 +1,426 @@
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  color: #0056b3;
+  transform: scale(1.05);
+}
+
+.logo::before {
+  content: '🎮';
+  font-size: 1.3rem;
+  margin-right: 0.25rem;
+}
+
+.navMenu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.navItem a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+}
+
+.navItem a:hover {
+  color: #007bff;
+  background: #f8f9fa;
+}
+
+.navItem a.active {
+  color: #007bff;
+  background: #e3f2fd;
+  font-weight: 600;
+}
+
+.navActions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.searchBox {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  min-width: 200px;
+}
+
+.authSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ユーザーメニュー */
+.userMenu {
+  position: relative;
+  display: inline-block;
+}
+
+.userBtn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-height: 40px;
+  font-size: 0.9rem;
+}
+
+.userBtn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.userAvatar {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.userName {
+  font-weight: 500;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdownArrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.userMenu.open .dropdownArrow {
+  transform: rotate(180deg);
+}
+
+.userDropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  min-width: 220px;
+  z-index: 2000;
+  overflow: hidden;
+  animation: dropdownSlide 0.2s ease-out;
+}
+
+.userDropdown a,
+.userDropdown button {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  gap: 0.75rem;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.userDropdown a:hover,
+.userDropdown button:hover {
+  background: #f8f9fa;
+  color: #007bff;
+  padding-left: 1.25rem;
+}
+
+.userDropdown hr {
+  margin: 0;
+  border: none;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* ログイン・新規登録ボタン */
+.loginBtn,
+.registerBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  min-height: 40px;
+  border: 2px solid transparent;
+}
+
+.loginBtn {
+  color: #333;
+  background: #f8f9fa;
+  border-color: #e0e0e0;
+}
+
+.loginBtn:hover {
+  background: white;
+  color: #007bff;
+  border-color: #007bff;
+  transform: translateY(-1px);
+}
+
+.registerBtn {
+  background: #007bff;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.registerBtn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+}
+
+.cartBtn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  min-height: 40px;
+}
+
+.cartBtn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 1200px) {
+  .logo {
+    font-size: 1.4rem;
+  }
+  
+  .logo::before {
+    font-size: 1.2rem;
+  }
+  
+  .navMenu {
+    gap: 1.2rem;
+  }
+  
+  .navItem a {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  .logo::before {
+    font-size: 1.1rem;
+  }
+  
+  .navMenu {
+    gap: 1rem;
+  }
+  
+  .navItem a {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .logo::before {
+    font-size: 1rem;
+  }
+  
+  .navMenu {
+    gap: 0.8rem;
+  }
+  
+  .navItem a {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.1rem;
+  }
+  
+  .logo::before {
+    font-size: 0.9rem;
+  }
+  
+  .navContainer {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .navMenu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    order: 1;
+  }
+
+  .navActions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    width: 100%;
+    justify-content: center;
+    order: 2;
+  }
+  
+  .searchBox {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    order: 1;
+  }
+  
+  .authSection {
+    order: 2;
+    flex-shrink: 0;
+  }
+  
+  .cartBtn {
+    order: 3;
+    flex-shrink: 0;
+  }
+
+  .userName {
+    display: none;
+  }
+  
+  .userBtn {
+    padding: 0.4rem 0.8rem;
+    min-height: 36px;
+  }
+  
+  .userDropdown {
+    right: -50px;
+    min-width: 200px;
+  }
+  
+  .loginBtn, .registerBtn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+    min-height: 36px;
+  }
+  
+  .registerBtn {
+    margin-left: 0.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .authSection {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  
+  .loginBtn, .registerBtn {
+    text-align: center;
+    flex: 1;
+    margin: 0;
+  }
+  
+  .registerBtn {
+    margin-top: 0.25rem;
+  }
+
+  .navActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .searchBox {
+    order: 1;
+    width: 100%;
+    max-width: none;
+  }
+  
+  .authSection {
+    order: 2;
+    justify-content: center;
+  }
+  
+  .cartBtn {
+    order: 3;
+    align-self: center;
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .userDropdown {
+    right: -80px;
+    min-width: 180px;
+  }
+}
